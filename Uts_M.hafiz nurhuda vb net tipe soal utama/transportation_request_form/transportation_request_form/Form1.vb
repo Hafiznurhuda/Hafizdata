@@ -2,12 +2,23 @@
 Public Class Form1
 
   
-    
+    Private Sub apus()
+        tbname.Text = ""
+        tbdes.Text = ""
+        tbidnum.Text = ""
+        tbins.Text = ""
+        tbphone.Text = ""
+        tbunit.Text = ""
+        tbac.Text = ""
+        cbtrabs.Text = ""
+        tbother.Text = ""
+
+    End Sub
     Private Sub btsend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btsend.Click
         Dim query As String
         Dim cmd As SqlCommand
         Dim dr As SqlDataReader
-        Dim tang As String = DateTime.Now.ToString("YYYY-MM-DD hh:mm:ss")
+        Dim tang As String = DateTime.Now.ToString("dd")
 
         tang = DateTimePicker1.Value
 
@@ -15,24 +26,33 @@ Public Class Form1
 
 
         Call bukakoneksi()
-        query = "INSERT INTO kendaraan (requestid,namerequestor,dateissue,requestorid)VALUES ('" & tbid.Text & "','" & tbname.Text & "','" & tang & "','" & tbidnum.Text & "')"
+        If cbtrabs.Text = "Other" Then
+
+       
+            query = "INSERT INTO kendaraan (requestid,namerequestor,dateissue,requestorid,unit,unitdestination,acregist,transportation,phone,instructuion)VALUES ('" & tbid.Text & "','" & tbname.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & tbidnum.Text & "','" & tbunit.Text & "','" & tbdes.Text & "','" & tbac.Text & "','" & tbother.Text & "','" & tbphone.Text & "','" & tbins.Text & "')"
+
+        Else
+            query = "INSERT INTO kendaraan (requestid,namerequestor,dateissue,requestorid,unit,unitdestination,acregist,transportation,phone,instructuion)VALUES ('" & tbid.Text & "','" & tbname.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "','" & tbidnum.Text & "','" & tbunit.Text & "','" & tbdes.Text & "','" & tbac.Text & "','" & cbtrabs.Text & "','" & tbphone.Text & "','" & tbins.Text & "')"
+        End If
         cmd = New SqlCommand(query, conn)
         dr = cmd.ExecuteReader
 
         Call tutupKoneksi()
-        auto()
+        apus()
+
         LVReq.Clear()
         muncul()
+        auto()
 
 
 
         MsgBox("Send Request by " + tbname.Text + " Berhasil di simpan")
 
-        
+
     End Sub
 
     Private Sub auto()
-        Dim query As String
+
         Dim cmd As SqlCommand
         Dim dr As SqlDataReader
         Dim uid As String
@@ -63,14 +83,22 @@ Public Class Form1
     End Sub
    
     Private Sub muncul()
-        Dim cmd As SqlCommand        Dim dr As SqlDataReader        LVReq.View = View.Details        LVReq.Columns.Add("NO", 50)        LVReq.Columns.Add("Name OF Requestor", 100)
+        Dim cmd As SqlCommand        Dim dr As SqlDataReader        LVReq.View = View.Details        LVReq.Columns.Add("NO", 50)        LVReq.Columns.Add("Name OF Requestor", 100)        LVReq.Columns.Add("Unit From", 100)
+        LVReq.Columns.Add("Unit To", 100)
+        LVReq.Columns.Add("Request Date", 100)
+        LVReq.Columns.Add("Transportation", 100)
 
-        Try            Call bukakoneksi()            Dim query_id As String = "select * from kendaraan"            cmd = New SqlCommand(query_id, conn)            dr = cmd.ExecuteReader            Do While dr.Read                LVReq.Items.Add(dr("requestid"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("namerequestor"))                           Loop            dr.Close()            Call tutupKoneksi()        Catch ex As Exception            MsgBox(ex.ToString)        End Try
+        Try            Call bukakoneksi()            Dim query_id As String = "select * from kendaraan"            cmd = New SqlCommand(query_id, conn)            dr = cmd.ExecuteReader            Do While dr.Read                LVReq.Items.Add(dr("requestid"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("namerequestor"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("unit"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("unitdestination"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("dateissue"))                LVReq.Items(LVReq.Items.Count - 1).SubItems.Add(dr("transportation"))                           Loop            dr.Close()            Call tutupKoneksi()        Catch ex As Exception            MsgBox(ex.ToString)        End Try
     End Sub
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         muncul()
+        tbid.Visible = False
+
+        Button1.Visible = False
+        Btcan.Visible = False
 
         auto()
+        tbother.Visible = False
 
 
     End Sub
@@ -114,12 +142,18 @@ Public Class Form1
             dr.Read()
             tbid.Text = dr("requestid")
             tbname.Text = dr("namerequestor")
-            tbid.Text = dr("requestid")
-            tbid.Text = dr("requestid")
-
-           
-
+            tbidnum.Text = dr("requestorid")
+            tbunit.Text = dr("unit")
+            tbdes.Text = dr("unitdestination")
+            tbac.Text = dr("acregist")
+            tbac.Text = dr("acregist")
+            cbtrabs.Text = dr("transportation")
+            tbphone.Text = dr("phone")
+            tbins.Text = dr("instructuion")
             dr.Close()
+            Button1.Visible = True
+            Btcan.Visible = True
+            btsend.Visible = False
 
             Call tutupKoneksi()
         Catch ex As Exception
@@ -136,9 +170,11 @@ Public Class Form1
         Dim cekStok As Boolean = False
         Try
             Call bukakoneksi()
-            query = " Update kendaraan SET namerequestor='" & tbname.Text & "' where requestid='" & tbid.Text & "'"
-
-
+            If cbtrabs.Text = "Other" Then
+                query = " Update kendaraan SET namerequestor='" & tbname.Text & "',requestorid='" & tbidnum.Text & "',unit='" & tbunit.Text & "',unitdestination='" & tbdes.Text & "',acregist='" & tbac.Text & "',transportation='" & tbother.Text & "',phone='" & tbphone.Text & "',instructuion='" & tbins.Text & "' where requestid='" & tbid.Text & "'"
+            Else
+                query = " Update kendaraan SET namerequestor='" & tbname.Text & "',requestorid='" & tbidnum.Text & "',unit='" & tbunit.Text & "',unitdestination='" & tbdes.Text & "',acregist='" & tbac.Text & "',transportation='" & cbtrabs.Text & "',phone='" & tbphone.Text & "',instructuion='" & tbins.Text & "' where requestid='" & tbid.Text & "'"
+            End If
             cmd = New SqlCommand(query, conn)
             dr = cmd.ExecuteReader
             dr.Close()
@@ -148,9 +184,30 @@ Public Class Form1
             Call tutupKoneksi()
             LVReq.Clear()
             muncul()
+            auto()
+            apus()
+            btsend.Visible = True
+            Button1.Visible = False
+            Btcan.Visible = False
 
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+    End Sub
+
+    Private Sub cbtrabs_TextChanged(sender As System.Object, e As System.EventArgs) Handles cbtrabs.TextChanged
+        If cbtrabs.Text = "Other" Then
+            tbother.Visible = True
+        Else
+            tbother.Visible = False
+        End If
+    End Sub
+
+   
+    Private Sub Btcan_Click(sender As System.Object, e As System.EventArgs) Handles Btcan.Click
+        apus()
+        Button1.Visible = False
+        Btcan.Visible = False
+        btsend.Visible = True
     End Sub
 End Class

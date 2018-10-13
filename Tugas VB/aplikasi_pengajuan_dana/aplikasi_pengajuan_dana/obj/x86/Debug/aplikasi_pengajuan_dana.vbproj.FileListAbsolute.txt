@@ -31,3 +31,6 @@ C:\Users\Masamune\Desktop\gundam\M_Hafiz_Nurhuda_IK2\Program visual 2\formatif d
 C:\Users\LP3I\Desktop\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.exe
 C:\Users\LP3I\Desktop\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.xml
 C:\Users\LP3I\Desktop\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.pdb
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.exe
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.xml
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Tugas VB\aplikasi_pengajuan_dana\aplikasi_pengajuan_dana\obj\x86\Debug\aplikasi_pengajuan_dana.pdb

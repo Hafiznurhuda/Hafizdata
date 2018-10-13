@@ -41,19 +41,21 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cbtrabs = New System.Windows.Forms.ComboBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.tbid = New System.Windows.Forms.TextBox()
         Me.LVReq = New System.Windows.Forms.ListView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.DdToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DdToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.tbother = New System.Windows.Forms.TextBox()
+        Me.Btcan = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btsend
         '
-        Me.btsend.Location = New System.Drawing.Point(130, 310)
+        Me.btsend.Location = New System.Drawing.Point(131, 318)
         Me.btsend.Name = "btsend"
         Me.btsend.Size = New System.Drawing.Size(84, 29)
         Me.btsend.TabIndex = 0
@@ -142,7 +144,7 @@ Partial Class Form1
         '
         'tbphone
         '
-        Me.tbphone.Location = New System.Drawing.Point(447, 153)
+        Me.tbphone.Location = New System.Drawing.Point(447, 173)
         Me.tbphone.Name = "tbphone"
         Me.tbphone.Size = New System.Drawing.Size(136, 20)
         Me.tbphone.TabIndex = 12
@@ -150,7 +152,7 @@ Partial Class Form1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(343, 156)
+        Me.Label6.Location = New System.Drawing.Point(343, 176)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(79, 13)
         Me.Label6.TabIndex = 11
@@ -158,7 +160,7 @@ Partial Class Form1
         '
         'tbins
         '
-        Me.tbins.Location = New System.Drawing.Point(130, 201)
+        Me.tbins.Location = New System.Drawing.Point(131, 209)
         Me.tbins.Multiline = True
         Me.tbins.Name = "tbins"
         Me.tbins.Size = New System.Drawing.Size(432, 103)
@@ -167,7 +169,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(26, 201)
+        Me.Label7.Location = New System.Drawing.Point(27, 209)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(56, 13)
         Me.Label7.TabIndex = 13
@@ -200,15 +202,6 @@ Partial Class Form1
         Me.cbtrabs.Size = New System.Drawing.Size(136, 21)
         Me.cbtrabs.TabIndex = 17
         '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = "yyyy/MM/dd hh:mm:ss"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(130, 157)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(148, 20)
-        Me.DateTimePicker1.TabIndex = 18
-        '
         'tbid
         '
         Me.tbid.Location = New System.Drawing.Point(29, 12)
@@ -219,7 +212,7 @@ Partial Class Form1
         'LVReq
         '
         Me.LVReq.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.LVReq.Location = New System.Drawing.Point(12, 367)
+        Me.LVReq.Location = New System.Drawing.Point(13, 375)
         Me.LVReq.Name = "LVReq"
         Me.LVReq.Size = New System.Drawing.Size(550, 181)
         Me.LVReq.TabIndex = 20
@@ -234,33 +227,60 @@ Partial Class Form1
         'DdToolStripMenuItem
         '
         Me.DdToolStripMenuItem.Name = "DdToolStripMenuItem"
-        Me.DdToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DdToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.DdToolStripMenuItem.Text = "Edit"
         '
         'DdToolStripMenuItem1
         '
         Me.DdToolStripMenuItem1.Name = "DdToolStripMenuItem1"
-        Me.DdToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.DdToolStripMenuItem1.Size = New System.Drawing.Size(108, 22)
         Me.DdToolStripMenuItem1.Text = "Hapus"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(248, 310)
+        Me.Button1.Location = New System.Drawing.Point(247, 318)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(84, 29)
         Me.Button1.TabIndex = 21
         Me.Button1.Text = "update"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(130, 163)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
+        Me.DateTimePicker1.TabIndex = 22
+        Me.DateTimePicker1.Value = New Date(2018, 2, 12, 0, 0, 0, 0)
+        '
+        'tbother
+        '
+        Me.tbother.Location = New System.Drawing.Point(453, 148)
+        Me.tbother.Name = "tbother"
+        Me.tbother.Size = New System.Drawing.Size(126, 20)
+        Me.tbother.TabIndex = 23
+        '
+        'Btcan
+        '
+        Me.Btcan.Location = New System.Drawing.Point(358, 318)
+        Me.Btcan.Name = "Btcan"
+        Me.Btcan.Size = New System.Drawing.Size(84, 29)
+        Me.Btcan.TabIndex = 24
+        Me.Btcan.Text = "Cancelar"
+        Me.Btcan.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(597, 560)
+        Me.ClientSize = New System.Drawing.Size(595, 560)
+        Me.Controls.Add(Me.Btcan)
+        Me.Controls.Add(Me.tbother)
+        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.LVReq)
         Me.Controls.Add(Me.tbid)
-        Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.cbtrabs)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -304,12 +324,14 @@ Partial Class Form1
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents cbtrabs As System.Windows.Forms.ComboBox
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents tbid As System.Windows.Forms.TextBox
     Friend WithEvents LVReq As System.Windows.Forms.ListView
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents DdToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DdToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tbother As System.Windows.Forms.TextBox
+    Friend WithEvents Btcan As System.Windows.Forms.Button
 
 End Class

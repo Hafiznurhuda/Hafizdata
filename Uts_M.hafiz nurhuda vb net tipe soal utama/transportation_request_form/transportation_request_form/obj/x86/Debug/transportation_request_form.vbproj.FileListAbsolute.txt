@@ -10,3 +10,12 @@ C:\Users\LP3I\AppData\Local\Temporary Projects\transportation_request_form\obj\x
 D:\M_Hafiz_Nurhuda_IK2\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.exe
 D:\M_Hafiz_Nurhuda_IK2\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.xml
 D:\M_Hafiz_Nurhuda_IK2\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.pdb
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.exe
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.xml
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.pdb
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\bin\Debug\transportation_request_form.exe
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\bin\Debug\transportation_request_form.pdb
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\bin\Debug\transportation_request_form.xml
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.Form1.resources
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.Resources.resources
+C:\Users\Masamune\Desktop\gundam\Hafizdata\Uts_M.hafiz nurhuda vb net tipe soal utama\transportation_request_form\transportation_request_form\obj\x86\Debug\transportation_request_form.vbproj.GenerateResource.Cache

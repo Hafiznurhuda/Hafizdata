@@ -9,10 +9,10 @@ Module koneksi
     Public sql As String
     Public conn As New SqlConnection
 
-    Public str As String = "Data Source=A01;" & _
+    Public str As String = "Data Source=DESKTOP-84E601A;" & _
                             "Initial Catalog=transportasi;" & _
                             "Persist Security Info=True;" & _
-                            "UID=sa;PWD=admin"
+                            "UID=ff;PWD=admin"
     Public Sub bukakoneksi()
         If conn.State = ConnectionState.Closed Then
 
