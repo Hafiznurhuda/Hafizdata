@@ -174,7 +174,9 @@ function adjust_textarea(h) {
   <?php
   
   $ite =$_POST['desc'];
-  
+  $lite =$_POST['qty'];
+  $sat  =$_POST['satuan'];
+  $gg	=$_POST['gd'];
   $id = getautoid('id','pengiriman_detail','PRD');
  // Ambil data dari session
  if (isset($_SESSION['tmpnama'])) {
@@ -236,17 +238,16 @@ function adjust_textarea(h) {
 ";
    
    // End script urai array
-   }
-   $ff =$_POST['fi'];
-  $query = "INSERT INTO `pengiriman_detail` 
-	(`id`,`itemdesc`,`qty`,`satuan`,`goodcategory`) 
-	VALUES ('$i','$ff','$tmpalamat[$i]','$satuan[$i]','$gd[$i]')";
-
-		
-   mysql_query($query);
+   
+  
   ?>
 </table>
+<input type="text" name="fdd" value="<?php $i;?>">
 <input type="text" name="fi"value="<?php echo $ite;?>">
+<input type="text" name="fl"value="<?php echo $lite;?>">
+<input type="text" name="fk"value="<?php echo $sat;?>">
+<input type="text" name="fg"value="<?php echo $gg;?>">
+   <?php }?>
 </form>
 <br>
 <script type="text/javascript">

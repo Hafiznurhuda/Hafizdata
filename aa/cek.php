@@ -4,8 +4,12 @@ error_reporting(false);
  session_start();
 $id = getautoid('pengirimanid','pengiriman_header`','PRD');
 $sip= $_POST['sip'];
-$harga 		= $_POST['origin'];
-$qty 		= $_POST['dest'];
+$ori 		= $_POST['origin'];
+$des 		= $_POST['dest'];
+$ship		= $_POST['shipmen'];
+$wer		= $_POST['wei'];
+$dm			= $_POST['dim'];
+
 $rear 		=$_POST['fi'];
 
 if ($_POST['pesan'] == 'add record') 
@@ -17,21 +21,25 @@ else if ($_POST['pros'] == 'Process')
 {
 
 $query = "INSERT INTO `pengiriman_header` 
-	(`pengirimanid`,`requesttype`,`portorigin`,`weight`) 
-	VALUES ('$id','$sip','$harga','$tmpama')";
+	(`pengirimanid`,`requesttype`,`portorigin`,`requestby`,`requestdate`,`portdestination`,`shipmenmode`,`weight`,`dimension`) 
+	VALUES ('$id','$sip','$ori','Amanda','2018-12-27','$des','$ship','$wer','$dm')";
 
 		
 mysql_query($query);
-
-$querya = "INSERT INTO `pengiriman_detail` 
+$i =$_POST['fdd'];
+ $ff =$_POST['fi'];
+   $fl =$_POST['fl'];
+   $fk =$_POST['fk'];
+   $fg =$_POST['fg'];
+   
+  $query = "INSERT INTO `pengiriman_detail` 
 	(`id`,`itemdesc`,`qty`,`satuan`,`goodcategory`) 
-	VALUES ('1','$rear','$tmpalamat[$i]','$satuan[$i]','$gd[$i]')";
-mysql_query($querya);
+	VALUES ('$i','$ff','$fl','$fk','$fg')";
+
+		
+   mysql_query($query);
 }
 
+header("location:nen.php")
 
-for ($i=""; $i < count($tmpnama); $i++) 
 ?>
-
-<form method="POST" action="">
-<input type="input" value="<?php echo $_GET['desc'];?>">wwdwds
